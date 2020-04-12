@@ -1,0 +1,23 @@
+.header {
+  padding: 0 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 218, 185);
+}
+
+.main-title {
+  font-family: 'Lato';
+  color: rgb(70, 130, 180);
+  font-weight: 700;
+}
+
+.header-menu {
+  color: rgb(70, 130, 180);
+  font-size: 18px;
+}
+
+.toggle-container{
+  position:relative;
+  left: -80px;
+}
