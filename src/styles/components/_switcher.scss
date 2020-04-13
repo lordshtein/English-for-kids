@@ -57,7 +57,7 @@
 	  border-radius: 18px;
   }
   &::before:hover {
-    background-color: rgb(169, 169, 169);
+    background-color: rgb(255, 215, 0);
   }
 }
 
@@ -77,6 +77,12 @@
 }
 .modeToggle[type=checkbox]:checked ~ .modeToggle-label span {
 	right: -70px;
+}
+
+.modeToggle[type=checkbox]:checked ~ .switch-btn{
+	&::before {
+    background-color: rgb(255, 215, 0);
+  }
 }
 
 .modeToggle{

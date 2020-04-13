@@ -1,0 +1,38 @@
+.menu-wrapper {
+  position: absolute;
+  top:0;
+  left:-250px;
+  width:250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(255, 218, 185);
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+.menu-list {
+  height: 50%;
+  margin: 30% 20px 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.menu__item{
+  font-family: 'Lato';
+  font-size: 20px;
+  color:  rgb(70, 130, 180);
+  cursor:pointer;
+}
+
+.menu-wrapper_active {
+  left:0;
+  opacity: 1;
+}
+
+.menu__item_active {
+ transform: rotate(90deg);
+}
