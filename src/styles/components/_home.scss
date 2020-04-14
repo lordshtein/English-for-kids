@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+.grid-wrapper {
+  padding: 0 20px 0 20px;
+  margin-top: 50px;
+  justify-content: space-between;
+  max-width: 1020px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2%;
+}
+
+.grid__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.category-label {
+  text-align: center;
+  font-family: 'Lato';
+  color: $mainblue;
+  font-size: 18px;
+}

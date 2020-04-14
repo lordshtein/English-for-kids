@@ -1,3 +1,5 @@
+@import "../utils/variables";
+
 .modeToggle-label {
   position: relative;
   display: inline-block;
@@ -5,9 +7,8 @@
   height: 30px;
   line-height: 30px;
   font-style: normal;
-  color: #000;
   border-radius: 14px;
-  background-color: rgb(119, 136, 153);
+  background-color: lighten($mainblue, 15%);
   transition: all 1s ease-in;
   cursor: pointer;
 
@@ -15,7 +16,7 @@
     content: "Go-go!";
     position: absolute;
     top:0;
-    color: rgb(255, 215, 0);
+    color: $maingold;
     font-weight: 700;
     left: 35px;
 	  transition: all 200ms ease;
@@ -24,12 +25,12 @@
     content: "Click to play";
     position: absolute;
     top: 0;
-    right: 50px;
-    width: 150px;
+    right: 100px;
+    width: 100px;
     text-transform: uppercase;
     font-size: 10px;
     font-weight: bold;
-    color: rgb(70, 130, 180);
+    color: $mainblue;
 
   }
 }
@@ -42,7 +43,7 @@
 	height: 36px;
 	display: block;
 	border-radius: 36px;
-	background: rgb(70, 130, 180);
+	background: $mainblue;
   transition: all 200ms ease;
   &::before {
     content: "";
@@ -54,21 +55,22 @@
     height: 18px;
     background-color:  rgb(255, 255, 255);
 	  margin: -9px 0 0 -9px;
-	  border-radius: 18px;
+    border-radius: 18px;
+    transition: all 200ms ease;
   }
-  &::before:hover {
-    background-color: rgb(255, 215, 0);
+  &:hover {
+    background-color: $mainskiny;
   }
 }
 
 .modeToggle[type=checkbox]:checked ~ .modeToggle-label {
-	background: rgb(99, 134, 180)
+	background: darken($mainblue, 15%);
 }
 
 .modeToggle[type=checkbox]:checked ~ .modeToggle-label {
   &::before {
 	  content: "Click to learn";
-    right: -170px;
+    right: -120px;
   }
   &::after{
     content: "Stop!";
@@ -76,12 +78,9 @@
   }
 }
 .modeToggle[type=checkbox]:checked ~ .modeToggle-label span {
-	right: -70px;
-}
-
-.modeToggle[type=checkbox]:checked ~ .switch-btn{
-	&::before {
-    background-color: rgb(255, 215, 0);
+  right: -70px;
+  &::before {
+    background-color: $maingold;
   }
 }
 

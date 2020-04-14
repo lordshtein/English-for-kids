@@ -1,5 +1,37 @@
 const cards = [
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+  [
+    {
+      category: 'Action',
+      image: 'img/fish.jpg',
+    },
+    {
+      category: 'More Actions',
+      image: 'img/ride.jpg',
+    },
+    {
+      category: 'Pets',
+      image: 'img/dog.jpg',
+    },
+    {
+      category: 'Animals',
+      image: 'img/turtle.jpg',
+    },
+    {
+      category: 'Clothes',
+      image: 'img/shirt.jpg',
+    },
+    {
+      category: 'Emotions',
+      image: 'img/laugh.jpg',
+    },
+    {
+      category: 'Smth',
+      image: 'img/laugh.jpg',
+    },
+    {
+      category: 'Smth more',
+      image: 'img/laugh.jpg',
+    }],
   [
     {
       word: 'cry',

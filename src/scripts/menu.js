@@ -23,7 +23,7 @@ const Menu = {
     cards[0].forEach((e) => {
       const menuItem = document.createElement('li');
       menuItem.classList.add('menu__item');
-      menuItem.innerText = e;
+      menuItem.innerText = e.category;
       fragment.appendChild(menuItem);
     });
     return fragment;

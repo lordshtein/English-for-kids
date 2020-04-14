@@ -1,20 +1,22 @@
+@import "../utils/variables";
+
 .header {
   position: relative;
   padding: 0 40px 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 218, 185);
+  background-color: $mainpeach;
 }
 
 .main-title {
   font-family: 'Lato';
-  color: rgb(70, 130, 180);
+  color: $mainblue;
   font-weight: 700;
 }
 
 .header-menu {
-  color: rgb(70, 130, 180);
+  color: $mainblue;
   font-size: 18px;
   z-index:10;
   transition: all 200ms ease;
