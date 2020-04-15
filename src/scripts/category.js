@@ -1,53 +1,38 @@
 import cards from './cards';
-import Category from './category';
 
-const Home = {
+const Category = {
   elements: {
     wrapper: null,
+    catnumber: null,
   },
 
   init() {
     this.elements.wrapper = document.createElement('div');
-
     this.elements.wrapper.classList.add('flex-wrapper');
-    this.elements.wrapper.appendChild(this.createCategories());
+    this.elements.wrapper.appendChild(this.createCards(this.elements.catnumber));
+
     document.querySelector('body').appendChild(this.elements.wrapper);
   },
 
-  createCategories() {
+  createCards() {
     const fragment = document.createDocumentFragment();
-    cards[0].forEach((e, i) => {
+    cards[this.elements.catnumber].forEach((e) => {
       const flexItem = document.createElement('div');
-      flexItem.setAttribute('catnumber', `${i + 1}`);
-      flexItem.addEventListener('click', (event) => {
-        this.setCatNubmer(event, 'div');
-        document.querySelector('.flex-wrapper').remove();
-        Category.init();
-      });
       const lable = document.createElement('span');
       lable.classList.add('category-label');
       flexItem.classList.add('flex__item');
       flexItem.innerHTML = this.findImg(e);
-      lable.innerText = e.category;
+      lable.innerText = e.word;
       flexItem.appendChild(lable);
       fragment.appendChild(flexItem);
     });
     return fragment;
   },
-
   findImg(e) {
     const path = e.image;
     const image = `<img class="flex__img" src="../src/${path}">`;
     return image;
   },
-
-  setCatNubmer(event, node) {
-    Category.elements.catnumber = event.target.closest(node).getAttribute('catnumber');
-  },
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-  Home.init();
-});
-
-export default Home;
+export default Category;

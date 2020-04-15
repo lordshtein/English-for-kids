@@ -1,29 +1,40 @@
 @import "../utils/variables";
 
-.grid-wrapper {
+.flex-wrapper {
   padding: 0 20px 0 20px;
   margin-top: 50px;
   justify-content: space-between;
   max-width: 1020px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 2%;
 }
 
-.grid__item {
+.flex__item {
+  max-width: 30%;
   display: flex;
   flex-direction: column;
+  background-color: $mainpeach;
+  border-radius: 3%;
 }
 
-.grid__img {
+.flex__img {
+  margin-top: 2%;
+  align-self: center;
   object-fit: contain;
-  width: 100%;
+  width: 90%;
+  border-radius: 25%;
 }
 
 .category-label {
   text-align: center;
   font-family: 'Lato';
-  color: $mainblue;
+  color: $mainskiny;
   font-size: 18px;
 }
+
