@@ -2,6 +2,10 @@ import cards from './cards';
 import Home from './home';
 import Category from './category';
 
+const menuClick = () => {
+  document.querySelector('.header-menu').classList.toggle('menu__item_active');
+  document.querySelector('.menu-wrapper').classList.toggle('menu-wrapper_active');
+};
 
 const Menu = {
   elements: {
@@ -23,6 +27,7 @@ const Menu = {
     document.querySelector('.home').addEventListener('click', () => {
       document.querySelector('.flex-wrapper').remove();
       Home.init();
+      menuClick();
     });
   },
 
@@ -41,6 +46,7 @@ const Menu = {
         Home.setCatNubmer(event, 'li');
         document.querySelector('.flex-wrapper').remove();
         Category.init();
+        menuClick();
       });
       menuItem.innerText = e.category;
       fragment.appendChild(menuItem);
@@ -53,9 +59,5 @@ window.addEventListener('DOMContentLoaded', () => {
   Menu.init();
 });
 
-const menuClick = () => {
-  document.querySelector('.header-menu').classList.toggle('menu__item_active');
-  document.querySelector('.menu-wrapper').classList.toggle('menu-wrapper_active');
-};
 
 document.querySelector('.header-menu').addEventListener('click', menuClick);

@@ -2,10 +2,10 @@
 
 .flex-wrapper {
   padding: 0 20px 0 20px;
-  margin-top: 50px;
+  margin-top: 20px;
   justify-content: space-between;
   max-width: 1020px;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -16,8 +16,8 @@
 }
 
 .flex__item {
-  max-width: 30%;
   display: flex;
+  width: 30%;
   flex-direction: column;
   background-color: $mainpeach;
   border-radius: 3%;
@@ -26,15 +26,79 @@
 .flex__img {
   margin-top: 2%;
   align-self: center;
-  object-fit: contain;
-  width: 90%;
+  object-fit: scale-down;
+  width: 80%;
   border-radius: 25%;
 }
 
-.category-label {
+.category-name {
+  flex-shrink: 0;
+  width:100%;
+  background-color: $mainblue;
+  border-radius: 4px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.category-label,
+.category-name {
   text-align: center;
   font-family: 'Lato';
   color: $mainskiny;
-  font-size: 18px;
+  font-size: 24px;
+}
+
+.flex__item-flipper {
+  display: flex;
+  width: 30%;
+  height: 24%;
+  flex-direction: column;
+  border-radius: 3%;
+
+  perspective: 1000px;
+}
+
+.flex__flipper {
+  width: 100%;
+  height: 80%;
+  position: relative;
+
+  transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.flex-front,
+.flex-back {
+  position: absolute;
+	top: 0;
+  left: 0;
+
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+
+  background-color: $mainpeach;
+  border-radius: 3%;
+}
+
+
+.flex-front {
+  z-index: 5;
+}
+
+.flex-back {
+  transform: rotateY(180deg);
+}
+
+
+.flip-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: $mainblue;
+}
+
+.flip {
+  transform: rotateY(180deg);
 }
 

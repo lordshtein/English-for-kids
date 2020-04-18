@@ -8,7 +8,6 @@ const Home = {
 
   init() {
     this.elements.wrapper = document.createElement('div');
-
     this.elements.wrapper.classList.add('flex-wrapper');
     this.elements.wrapper.appendChild(this.createCategories());
     document.querySelector('body').appendChild(this.elements.wrapper);
@@ -23,6 +22,8 @@ const Home = {
         this.setCatNubmer(event, 'div');
         document.querySelector('.flex-wrapper').remove();
         Category.init();
+        document.querySelector('.header-menu').classList.remove('menu__item_active');
+        document.querySelector('.menu-wrapper').classList.remove('menu-wrapper_active');
       });
       const lable = document.createElement('span');
       lable.classList.add('category-label');
@@ -49,5 +50,6 @@ const Home = {
 window.addEventListener('DOMContentLoaded', () => {
   Home.init();
 });
+
 
 export default Home;
