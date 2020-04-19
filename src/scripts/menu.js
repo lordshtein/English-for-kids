@@ -1,9 +1,11 @@
 import cards from './cards';
 import Home from './home';
 import Category from './category';
+import Game from './gamemode';
+
 
 const menuClick = () => {
-  document.querySelector('.header-menu').classList.toggle('menu__item_active');
+  document.querySelector('.header-menu').classList.toggle('header__menu_active');
   document.querySelector('.menu-wrapper').classList.toggle('menu-wrapper_active');
 };
 
@@ -46,6 +48,7 @@ const Menu = {
         Home.setCatNubmer(event, 'li');
         document.querySelector('.flex-wrapper').remove();
         Category.init();
+        Game.createFields();
         menuClick();
       });
       menuItem.innerText = e.category;

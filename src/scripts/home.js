@@ -1,5 +1,6 @@
 import cards from './cards';
 import Category from './category';
+import Game from './gamemode';
 
 const Home = {
   elements: {
@@ -22,6 +23,7 @@ const Home = {
         this.setCatNubmer(event, 'div');
         document.querySelector('.flex-wrapper').remove();
         Category.init();
+        Game.createFields();
         document.querySelector('.header-menu').classList.remove('menu__item_active');
         document.querySelector('.menu-wrapper').classList.remove('menu-wrapper_active');
       });

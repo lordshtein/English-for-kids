@@ -29,6 +29,10 @@
   font-size: 20px;
   color: $mainblue;
   cursor:pointer;
+  transition: 0.2s;
+  &:hover {
+    font-size: 24px;
+  }
 }
 
 .menu-wrapper_active {
@@ -36,10 +40,19 @@
   opacity: 1;
 }
 
-.menu__item_active {
+.header__menu {
+  z-index:11;
+}
+
+.header__menu_active {
  transform: rotate(90deg);
+ z-index:11;
 }
 
 .home{
   color:$mainskiny;
+}
+
+.menu__item_current {
+  font-size: 30px;
 }
