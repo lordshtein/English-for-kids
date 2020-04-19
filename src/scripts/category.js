@@ -32,7 +32,7 @@ const Category = {
       front.classList.add('flex-front');
       flipper.classList.add('flex__flipper');
       flexItem.classList.add('flex__item-flipper');
-      flexItem.setAttribute('dataid', `${e.word}`);
+      flexItem.setAttribute('dataid', `${e.audioSrc}`);
 
       front.innerHTML = this.findImg(e);
 
@@ -71,7 +71,6 @@ const Category = {
       flipper.appendChild(front);
       flexItem.appendChild(flipper);
       fragment.appendChild(flexItem);
-
     });
     return fragment;
   },
