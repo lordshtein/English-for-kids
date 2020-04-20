@@ -390,10 +390,10 @@ const cards = [
       audioSrc: 'audio/forest.mp3',
     },
     {
-      word: 'mauntain',
+      word: 'mountain',
       translation: 'гора',
-      image: 'img/mauntain.jpg',
-      audioSrc: 'audio/mauntain.mp3',
+      image: 'img/mountain.jpg',
+      audioSrc: 'audio/mountain.mp3',
     },
     {
       word: 'flower',

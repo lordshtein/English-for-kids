@@ -1,0 +1,16 @@
+.result-counter {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+}
+.game-res {
+  object-fit: contain;
+  width:100%;
+}
+
+.res__icon-container {
+  width: 30px;
+  height: 30px;
+}

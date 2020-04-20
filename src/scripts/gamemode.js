@@ -36,7 +36,9 @@ const Game = {
     this.elements.startBtn.classList.add('btn-repeat');
 
     this.playSound(this.gameAudio[this.gameAudio.length - 1]);
-    document.querySelector('.flex-wrapper').addEventListener('click', (e) => Game.checkAnswer(e));
+    document.querySelectorAll('.flex__item-flipper').forEach((e) => {
+      e.addEventListener('click', (event) => Game.checkAnswer(event));
+    });
   },
 
   playSound(path) {
@@ -47,9 +49,7 @@ const Game = {
 
   creatAudios() {
     if (document.querySelector('.flex__item-flipper')) {
-      const {
-        catnumber
-      } = Category.elements;
+      const { catnumber } = Category.elements;
       this.gameAudio = [];
       cards[catnumber].forEach((e) => {
         this.gameAudio.push(e.audioSrc);
@@ -59,24 +59,26 @@ const Game = {
   },
 
   createTrue() {
-    const right = document.createElement('div');
-    right.innerText = 'Ok';
-    document.querySelector('.result-counter').appendChild(right);
+    const res = document.createElement('div');
+    res.classList.add('res__icon-container');
+    res.innerHTML = '<img class="game-res" src="../src/img/star-win.svg">';
+    document.querySelector('.result-counter').prepend(res);
   },
 
   createFalse() {
-
+    const res = document.createElement('div');
+    res.classList.add('res__icon-container');
+    res.innerHTML = '<img class="game-res" src="../src/img/star.svg">';
+    document.querySelector('.result-counter').prepend(res);
   },
 
   checkAnswer(e) {
-    if (document.querySelector('.flex__item-flipper')) {
-      if (e.target.closest('.flex__item-flipper').getAttribute('dataid') === this.gameAudio[this.gameAudio.length - 1]) {
-        this.createTrue();
-        this.gameAudio.pop();
-        this.playSound(this.gameAudio[this.gameAudio.length - 1]);
-      } else {
-        this.createFalse();
-      }
+    if (e.target.closest('.flex__item-flipper').getAttribute('dataid') === this.gameAudio[this.gameAudio.length - 1]) {
+      this.createTrue();
+      this.gameAudio.pop();
+      this.playSound(this.gameAudio[this.gameAudio.length - 1]);
+    } else {
+      this.createFalse();
     }
   },
 };
