@@ -25,12 +25,12 @@ const cards = [
       image: 'img/laugh.jpg',
     },
     {
-      category: 'Smth',
-      image: 'img/laugh.jpg',
+      category: 'Vehicles',
+      image: 'img/airplane.jpg',
     },
     {
-      category: 'Smth more',
-      image: 'img/laugh.jpg',
+      category: 'Nature',
+      image: 'img/forest.jpg',
     }],
   [
     {
@@ -330,6 +330,106 @@ const cards = [
       translation: 'смех',
       image: 'img/laugh.jpg',
       audioSrc: 'audio/laugh.mp3',
+    },
+  ],
+  [
+    {
+      word: 'airplane',
+      translation: 'самолёт',
+      image: 'img/airplane.jpg',
+      audioSrc: 'audio/airplane.mp3',
+    },
+    {
+      word: 'bike',
+      translation: 'велосипед',
+      image: 'img/bike.jpg',
+      audioSrc: 'audio/bike.mp3',
+    },
+    {
+      word: 'train',
+      translation: 'поезд',
+      image: 'img/train.jpg',
+      audioSrc: 'audio/train.mp3',
+    },
+    {
+      word: 'helicopter',
+      translation: 'вертолёт',
+      image: 'img/helicopter.jpg',
+      audioSrc: 'audio/helicopter.mp3',
+    },
+    {
+      word: 'motorcycle',
+      translation: 'мотоцикл',
+      image: 'img/motorcycle.jpg',
+      audioSrc: 'audio/motorcycle.mp3',
+    },
+    {
+      word: 'ship',
+      translation: 'корабль',
+      image: 'img/ship.jpg',
+      audioSrc: 'audio/ship.mp3',
+    },
+    {
+      word: 'bus',
+      translation: 'автобус',
+      image: 'img/bus.jpg',
+      audioSrc: 'audio/bus.mp3',
+    },
+    {
+      word: 'car',
+      translation: 'автомобиль',
+      image: 'img/car.jpg',
+      audioSrc: 'audio/car.mp3',
+    },
+  ],
+  [
+    {
+      word: 'forest',
+      translation: 'лес',
+      image: 'img/forest.jpg',
+      audioSrc: 'audio/forest.mp3',
+    },
+    {
+      word: 'mauntain',
+      translation: 'гора',
+      image: 'img/mauntain.jpg',
+      audioSrc: 'audio/mauntain.mp3',
+    },
+    {
+      word: 'flower',
+      translation: 'цветок',
+      image: 'img/flower.jpg',
+      audioSrc: 'audio/flower.mp3',
+    },
+    {
+      word: 'field',
+      translation: 'поле',
+      image: 'img/field.jpg',
+      audioSrc: 'audio/field.mp3',
+    },
+    {
+      word: 'river',
+      translation: 'река',
+      image: 'img/river.jpg',
+      audioSrc: 'audio/river.mp3',
+    },
+    {
+      word: 'lake',
+      translation: 'озеро',
+      image: 'img/lake.jpg',
+      audioSrc: 'audio/lake.mp3',
+    },
+    {
+      word: 'ocean',
+      translation: 'океан',
+      image: 'img/ocean.jpg',
+      audioSrc: 'audio/ocean.mp3',
+    },
+    {
+      word: 'stone',
+      translation: 'камень',
+      image: 'img/stone.jpg',
+      audioSrc: 'audio/stone.mp3',
     },
   ],
 ];
