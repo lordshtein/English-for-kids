@@ -49,6 +49,7 @@ const Menu = {
         document.querySelector('.flex-wrapper').remove();
         Category.init();
         Game.createFields();
+        Game.gameAudio = [];
         menuClick();
       });
       menuItem.innerText = e.category;

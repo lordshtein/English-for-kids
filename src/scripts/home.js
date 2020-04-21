@@ -24,6 +24,7 @@ const Home = {
         document.querySelector('.flex-wrapper').remove();
         Category.init();
         Game.createFields();
+        Game.gameAudio = [];
         document.querySelector('.header-menu').classList.remove('menu__item_active');
         document.querySelector('.menu-wrapper').classList.remove('menu-wrapper_active');
       });
