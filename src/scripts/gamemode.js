@@ -6,6 +6,7 @@ const gameToggle = () => {
     Category.elements.playmode = 1;
   } else {
     Category.elements.playmode = 0;
+    Game.gameAudio = [];
   }
 };
 
@@ -32,6 +33,9 @@ const Game = {
   },
 
   startGame() {
+    if (!this.gameAudio || !this.gameAudio.length) {
+      this.creatAudios()
+    }
     this.elements.startBtn.innerHTML = '<span class="btn-label">Repeat...</span>';
     this.elements.startBtn.classList.add('btn-repeat');
 
@@ -58,34 +62,62 @@ const Game = {
     }
   },
 
+  setClicked(e) {
+    const target = e.target.closest('.flex__item-flipper')
+    target.classList.add('flex_clicked')
+    target.removeEventListener('click', (event) => Game.checkAnswer(event));
+  },
+
   createTrue() {
+    // add sounds!!!
     const res = document.createElement('div');
     res.classList.add('res__icon-container');
-    res.innerHTML = '<img class="game-res" src="../src/img/star-win.svg">';
+    res.innerHTML = '<img class="game-res game-res_true" src="../src/img/star-win.svg">';
     document.querySelector('.result-counter').prepend(res);
   },
 
   createFalse() {
+    // add sounds!!!
     const res = document.createElement('div');
     res.classList.add('res__icon-container');
-    res.innerHTML = '<img class="game-res" src="../src/img/star.svg">';
+    res.innerHTML = '<img class="game-res game-res_false" src="../src/img/star.svg">';
     document.querySelector('.result-counter').prepend(res);
   },
 
   checkAnswer(e) {
+    if (e.target.closest('.flex__item-flipper').classList.contains('flex_clicked')) {
+      return
+    }
     if (e.target.closest('.flex__item-flipper').getAttribute('dataid') === this.gameAudio[this.gameAudio.length - 1]) {
       this.createTrue();
       this.gameAudio.pop();
+      this.setClicked(e)
+      if (!this.gameAudio.length) {
+        this.finalResult()
+        return
+      }
       this.playSound(this.gameAudio[this.gameAudio.length - 1]);
     } else {
       this.createFalse();
     }
   },
+
+  finalResult() {
+    // add sounds!!!
+    const finalRes = document.createElement('div');
+    finalRes.classList.add('final-res__container')
+    if (document.querySelector('.game-res_false')) {
+      finalRes.innerHTML = '<img class="final-res" src="../src/img/failure.jpg">'
+    }
+    if (!document.querySelector('.game-res_false')) {
+      finalRes.innerHTML = '<img class="final-res" src="../src/img/success.jpg">'
+    }
+    document.querySelector('.flex-wrapper').appendChild(finalRes)
+  },
 };
 
 document.querySelector('#modeToggle').addEventListener('click', () => {
   gameToggle();
-  Game.creatAudios();
   if (document.querySelector('.flex__item-flipper')) {
     document.querySelector('.flex-wrapper').remove();
     Category.init();
