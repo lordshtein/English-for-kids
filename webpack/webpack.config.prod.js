@@ -1,7 +1,10 @@
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
+const Path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const common = require('./webpack.common.js');
+
 
 module.exports = merge(common, {
   mode: 'production',
@@ -16,9 +19,14 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new CopyWebpackPlugin([
+      { from: Path.resolve(__dirname, '../src/img'), to: 'src/img' },
+      { from: Path.resolve(__dirname, '../src/audio'), to: 'src/audio' },
+      { from: Path.resolve(__dirname, '../src/fonts'), to: 'src/fonts' },
+    ]),
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'bundle.css',
+      filename: 'src/styles/bundle.css',
     }),
   ],
   module: {

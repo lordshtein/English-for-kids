@@ -1,15 +1,6 @@
 import cards from './cards';
 import Category from './category';
 
-const gameToggle = () => {
-  if (document.querySelector('#modeToggle').checked) {
-    Category.elements.playmode = 1;
-  } else {
-    Category.elements.playmode = 0;
-    Game.gameAudio = [];
-  }
-};
-
 const Game = {
   elements: {
     startBtn: null,
@@ -34,7 +25,7 @@ const Game = {
 
   startGame() {
     if (!this.gameAudio || !this.gameAudio.length) {
-      this.creatAudios()
+      this.creatAudios();
     }
     this.elements.startBtn.innerHTML = '<span class="btn-label">Repeat...</span>';
     this.elements.startBtn.classList.add('btn-repeat');
@@ -63,8 +54,8 @@ const Game = {
   },
 
   setClicked(e) {
-    const target = e.target.closest('.flex__item-flipper')
-    target.classList.add('flex_clicked')
+    const target = e.target.closest('.flex__item-flipper');
+    target.classList.add('flex_clicked');
     target.removeEventListener('click', (event) => Game.checkAnswer(event));
   },
 
@@ -86,15 +77,15 @@ const Game = {
 
   checkAnswer(e) {
     if (e.target.closest('.flex__item-flipper').classList.contains('flex_clicked')) {
-      return
+      return;
     }
     if (e.target.closest('.flex__item-flipper').getAttribute('dataid') === this.gameAudio[this.gameAudio.length - 1]) {
       this.createTrue();
       this.gameAudio.pop();
-      this.setClicked(e)
+      this.setClicked(e);
       if (!this.gameAudio.length) {
-        this.finalResult()
-        return
+        this.finalResult();
+        return;
       }
       this.playSound(this.gameAudio[this.gameAudio.length - 1]);
     } else {
@@ -105,15 +96,24 @@ const Game = {
   finalResult() {
     // add sounds!!!
     const finalRes = document.createElement('div');
-    finalRes.classList.add('final-res__container')
+    finalRes.classList.add('final-res__container');
     if (document.querySelector('.game-res_false')) {
-      finalRes.innerHTML = '<img class="final-res" src="../src/img/failure.jpg">'
+      finalRes.innerHTML = '<img class="final-res" src="../src/img/failure.jpg">';
     }
     if (!document.querySelector('.game-res_false')) {
-      finalRes.innerHTML = '<img class="final-res" src="../src/img/success.jpg">'
+      finalRes.innerHTML = '<img class="final-res" src="../src/img/success.jpg">';
     }
-    document.querySelector('.flex-wrapper').appendChild(finalRes)
+    document.querySelector('.flex-wrapper').appendChild(finalRes);
   },
+};
+
+const gameToggle = () => {
+  if (document.querySelector('#modeToggle').checked) {
+    Category.elements.playmode = 1;
+  } else {
+    Category.elements.playmode = 0;
+    Game.gameAudio = [];
+  }
 };
 
 document.querySelector('#modeToggle').addEventListener('click', () => {
