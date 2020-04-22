@@ -60,7 +60,7 @@ const Game = {
   },
 
   createTrue() {
-    // add sounds!!!
+    this.playSound('audio/correct.mp3');
     const res = document.createElement('div');
     res.classList.add('res__icon-container');
     res.innerHTML = '<img class="game-res game-res_true" src="../src/img/star-win.svg">';
@@ -68,7 +68,7 @@ const Game = {
   },
 
   createFalse() {
-    // add sounds!!!
+    this.playSound('audio/error.mp3');
     const res = document.createElement('div');
     res.classList.add('res__icon-container');
     res.innerHTML = '<img class="game-res game-res_false" src="../src/img/star.svg">';
@@ -87,7 +87,7 @@ const Game = {
         this.finalResult();
         return;
       }
-      this.playSound(this.gameAudio[this.gameAudio.length - 1]);
+      setTimeout(() => this.playSound(this.gameAudio[this.gameAudio.length - 1]), 1000);
     } else {
       this.createFalse();
     }
@@ -99,12 +99,16 @@ const Game = {
     finalRes.classList.add('final-res__container');
     if (document.querySelector('.game-res_false')) {
       finalRes.innerHTML = '<img class="final-res" src="../src/img/failure.jpg">';
+      this.playSound('audio/failure.mp3');
     }
     if (!document.querySelector('.game-res_false')) {
       finalRes.innerHTML = '<img class="final-res" src="../src/img/success.jpg">';
+      this.playSound('audio/success.mp3');
     }
     document.querySelector('.flex-wrapper').appendChild(finalRes);
+    setTimeout(() => window.location.reload(), 2000);
   },
+
 };
 
 const gameToggle = () => {
