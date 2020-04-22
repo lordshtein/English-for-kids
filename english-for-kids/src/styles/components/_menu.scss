@@ -1,0 +1,58 @@
+@import "../utils/variables";
+
+.menu-wrapper {
+  position: absolute;
+  top:0;
+  left:-250px;
+  width:250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $mainpeach;
+  opacity: 0;
+  transition: all 200ms ease;
+  z-index: 10;
+}
+
+.menu-list {
+  height: 50%;
+  margin: 30% 20px 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.menu__item{
+  font-family: 'Lato';
+  font-size: 20px;
+  color: $mainblue;
+  cursor:pointer;
+  transition: 0.2s;
+  &:hover {
+    font-size: 24px;
+  }
+}
+
+.menu-wrapper_active {
+  left: 0;
+  opacity: 1;
+}
+
+.header__menu {
+  z-index:11;
+}
+
+.header__menu_active {
+ transform: rotate(90deg);
+ z-index:11;
+}
+
+.home{
+  color:$mainskiny;
+}
+
+.menu__item_current {
+  font-size: 30px;
+}

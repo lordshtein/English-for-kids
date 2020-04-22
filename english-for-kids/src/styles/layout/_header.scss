@@ -1,0 +1,45 @@
+@import "../utils/variables";
+
+.header {
+  position: relative;
+  padding: 0 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $mainpeach;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.main-title {
+  font-family: 'Lato';
+  color: $mainblue;
+  font-weight: 700;
+  @media (max-width: 420px) {
+   font-size: 24px;
+  }
+}
+
+.header-menu {
+  position:relative;
+  color: $mainblue;
+  font-size: 18px;
+  z-index:10;
+  transition: all 200ms ease;
+  @media (max-width: 768px) {
+    left: -50%;
+    top: 45px
+  }
+  @media (max-width: 420px) {
+    top: 36px
+  }
+}
+
+.toggle-container{
+  position:relative;
+  left: -80px;
+  @media (max-width: 768px) {
+    left: -20px;
+  }
+}
